@@ -30,6 +30,9 @@ export default {
   components: {
 
   },
+    created(){
+      this.goto(0)
+    },
   methods:{
     goto(index){
       // eslint-disable-next-line no-console
