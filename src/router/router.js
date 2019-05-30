@@ -13,7 +13,7 @@ export default [
         children:[
             {
                 path:"/home",
-                component:Home
+                component:Home,
             },
             {
                 path:"/list",
@@ -21,17 +21,18 @@ export default [
             },
             {
                 path:"/find",
-                component:Find
+                component:Find,
             },
             {
                 path:"/me",
-                component:Me
+                component:Me,
             }
         ]
     },
     {
         path:"/details",
         component:Details,
-        meta: { navShow: false}
+        name:'Details',
+        meta: { navShow: false},
     },
     ]

@@ -12,8 +12,9 @@
         methods:{
             itemClick(index){
                 // eslint-disable-next-line no-console
-                console.log(index)
-                this.$router.push("/details");
+                console.log(this.$router)
+                //路由传值，通过name
+                this.$router.push({ name: 'Details', params: { itemNo: index }});
             }
         },
         data() {
