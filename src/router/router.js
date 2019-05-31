@@ -35,4 +35,9 @@ export default [
         name:'Details',
         meta: { navShow: false},
     },
+
+    {
+        path:"/",
+        redirect:"/home"
+    }
     ]

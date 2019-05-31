@@ -5,20 +5,20 @@
       <!--底部tab栏 ,v-show用于控制跳转到二级页面隐藏底部tab栏-->
       <footer v-show="$route.meta.navShow==undefined||$route.meta.navShow">
           <div class="tab-item" @click="goto(1)">
-              <img src="./assets/tab_home.png">
-              <span>首页</span>
+              <img :src = "'/home' == $route.path ? this.tabBarImages[0].selected:this.tabBarImages[0].normal">
+              <span :class="{selected:'/home'==$route.path}">首页</span>
           </div>
           <div class="tab-item" @click="goto(2)">
-              <img src="./assets/tab_home.png">
-              <span>列表</span>
+              <img :src = "'/list' == $route.path ? this.tabBarImages[1].selected:this.tabBarImages[1].normal">
+              <span :class="{selected: '/list'==$route.path}">列表</span>
           </div>
           <div class="tab-item" @click="goto(3)">
-              <img src="./assets/tab_home.png">
-              <span>发现</span>
+              <img :src = "'/find' == $route.path ? this.tabBarImages[2].selected:this.tabBarImages[2].normal">
+              <span :class="{selected:'/find'==$route.path}">发现</span>
           </div>
           <div class="tab-item" @click="goto(4)">
-              <img src="./assets/tab_home.png">
-              <span>我的</span>
+              <img :src = "'/me' == $route.path ? this.tabBarImages[2].selected:this.tabBarImages[3].normal">
+              <span :class="{selected:'/me'==$route.path}">我的</span>
           </div>
       </footer>
   </div>
@@ -29,7 +29,12 @@ export default {
   name: 'app',
     data(){
       return{
-
+        tabBarImages:[
+            {normal:require('./assets/home.png'),selected:require('./assets/home_.png')},
+            {normal:require('./assets/list.png'),selected:require('./assets/list_.png')},
+            {normal:require('./assets/faxian.png'),selected:require('./assets/faxian_.png')},
+            {normal:require('./assets/wode.png'),selected:require('./assets/wode_.png')}
+        ],
       }
     },
   components: {
@@ -44,16 +49,16 @@ export default {
         console.log(index)
       switch (index) {
         case 1:
-          this.$router.push('/home')
+          this.$router.replace('/home')
           break
         case 2:
-          this.$router.push("/list")
+          this.$router.replace("/list")
           break
         case 3:
-          this.$router.push("/find")
+          this.$router.replace("/find")
           break
         case 4:
-          this.$router.push("/me")
+          this.$router.replace("/me")
           break
       }
     }
@@ -103,5 +108,9 @@ export default {
     img{
         width: 20px;
         height: 20px;
+    }
+
+    .selected{
+        color: #1296db;
     }
 </style>

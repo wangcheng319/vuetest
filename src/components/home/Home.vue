@@ -1,7 +1,7 @@
 <template>
     <div>
         this is home
-        <img src="../../assets/tab_home.png">
+        <img src="../../assets/home.png">
     </div>
 </template>
 
