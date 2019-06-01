@@ -17,7 +17,7 @@
               <span :class="{selected:'/find'==$route.path}">发现</span>
           </div>
           <div class="tab-item" @click="goto(4)">
-              <img :src = "'/me' == $route.path ? this.tabBarImages[2].selected:this.tabBarImages[3].normal">
+              <img :src = "'/me' == $route.path ? this.tabBarImages[3].selected:this.tabBarImages[3].normal">
               <span :class="{selected:'/me'==$route.path}">我的</span>
           </div>
       </footer>
@@ -40,9 +40,6 @@ export default {
   components: {
 
   },
-    created(){
-      this.goto(0)
-    },
   methods:{
     goto(index){
       // eslint-disable-next-line no-console
