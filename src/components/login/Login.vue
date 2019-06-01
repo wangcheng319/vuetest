@@ -27,12 +27,12 @@
         methods:{
             login(){
                 if (this.userName.length == 0 || this.userName !== "jack"){
-                    alert('用户名不正确')
+                    window.console.log('用户名不正确')
                     return;
                 }
 
                 if (this.passWd.length == 0 || this.passWd !== "123"){
-                    alert('密码不正确')
+                    window.console.log('密码不正确')
                     return;
                 }
 
@@ -55,10 +55,11 @@
         margin-top: 16px;
         padding: 16px;
         border-radius: 5px;
+        border: aqua 1px solid;
     }
 
     .inputLayout{
-        outline-style: none;
+        outline: 0 none;
     }
 
     .loginBtn{
@@ -69,7 +70,7 @@
         height: 46px;
         margin: 16px;
         outline: 0 none;
-
+        font-size: 18px;
     }
 
 </style>
