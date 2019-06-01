@@ -2,6 +2,9 @@
     <div>
         你选择了：{{this.itemNo}}
         <button @click="back">返回</button>
+        <span :title="itemName">
+            {{this.itemName}}
+        </span>
     </div>
 
 
@@ -20,7 +23,8 @@
         data(){
             return{
                 //获取路由参数
-                itemNo : this.$route.params.itemNo
+                itemNo : this.$route.params.itemNo,
+                itemName :"zhangsan"
             }
         },
         created() {

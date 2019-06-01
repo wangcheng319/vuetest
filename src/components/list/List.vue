@@ -1,6 +1,6 @@
 <template>
     <ul>
-        <li v-for="(item,index) in items" v-bind:key="index" @click="itemClick(index)">
+        <li v-for="(item,index) in items" :key="index" @click="itemClick(index)">
             <span>this is list{{item.message}}</span>
         </li>
     </ul>

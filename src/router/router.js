@@ -5,6 +5,7 @@ import List from "@/components/list/List";
 import Find from "@/components/find/Find";
 import Me from "@/components/me/Me";
 import Details from "@/components/list/details/Details";
+import Login from "../components/login/Login";
 
 export default [
     {
@@ -27,6 +28,12 @@ export default [
             {
                 path:"/me",
                 component:Me,
+                name: 'me'
+            },
+            {
+                path:'/login',
+                component:Login,
+                meta: {navShow: false}
             }
         ]
     },
