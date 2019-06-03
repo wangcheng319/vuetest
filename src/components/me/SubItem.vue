@@ -1,5 +1,5 @@
 <template>
-    <div @click="itemClick">我是来自子组件{{this.nameP}}</div>
+    <div @click="itemClick">父组件传递过来的：{{this.nameP}}</div>
 </template>
 
 <!--父子组件之间的通信-->
@@ -11,7 +11,7 @@
         methods:{
             itemClick(){
                 //子组件发送事件，前面为事件名，后面为参数
-                this.$emit('itemClick',9)
+                this.$emit('itemClick','我是子组件传递过来的参数')
             }
         }
     }
