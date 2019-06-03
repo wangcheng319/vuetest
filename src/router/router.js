@@ -1,11 +1,11 @@
 
 import App from "../App"
-import Home from "@/components/home/Home";
-import List from "@/components/list/List";
-import Find from "@/components/find/Find";
-import Me from "@/components/me/Me";
-import Details from "@/components/list/details/Details";
 import Login from "../components/login/Login";
+import Home from "../components/home/Home";
+import List from "../components/list/List";
+import Find from "../components/find/Find";
+import Me from "../components/me/Me";
+import Details from "../components/list/details/Details";
 
 export default [
     {

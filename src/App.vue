@@ -1,8 +1,6 @@
 <template>
   <div id="app">
-    <!-- 中间内容区域，     -->
     <router-view></router-view>
-      <!--底部tab栏 ,v-show用于控制跳转到二级页面隐藏底部tab栏-->
       <footer v-show="$route.meta.navShow==undefined||$route.meta.navShow">
           <div class="tab-item" @click="goto(1)">
               <img :src = "'/home' == $route.path ? this.tabBarImages[0].selected:this.tabBarImages[0].normal">
@@ -64,10 +62,6 @@ export default {
 </script>
 
 <style  scoped>
-    *{
-        padding: 0;
-        margin: 0;
-    }
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
