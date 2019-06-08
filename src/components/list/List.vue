@@ -10,16 +10,20 @@
                 </li>
             </ul>
         </header>
-        <ul class="lists">
-            <li v-for="(item,index) in items" :key="index" @click="itemClick(index)" class="list_item">
-                <span>this is list{{item.message}}</span>
-            </li>
-        </ul>
+        <div class="list-wrapper" ref="wrapper">
+            <ul class="lists">
+                <li v-for="(item,index) in items" :key="index" @click="itemClick(index)" class="list_item">
+                    <span>this is list{{item.message}}</span>
+                </li>
+            </ul>
+        </div>
     </div>
 
 </template>
 
 <script>
+    import Bscroll from '@better-scroll/core'
+
     export default {
         name: "List",
         methods:{
@@ -82,6 +86,10 @@
         },
         mounted() {
             window.addEventListener("scroll",this.onScroll)
+
+            this.$nextTick(() => {
+                this.scroll = new Bscroll(this.$refs.wrapper, {})
+            })
         }
     }
 </script>
