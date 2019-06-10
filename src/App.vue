@@ -16,7 +16,7 @@
           </div>
           <div class="tab-item" @click="goto(4)">
               <img :src = "'/me' == $route.path ? this.tabBarImages[3].selected:this.tabBarImages[3].normal">
-              <span :class="{selected:'/me'==$route.path}">我的1</span>
+              <span :class="{selected:'/me'==$route.path}">我的</span>
           </div>
       </footer>
   </div>
