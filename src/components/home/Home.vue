@@ -2,12 +2,18 @@
     <div>
         this is home
         <img src="../../assets/home.png">
+        <p>{{api}}</p>
     </div>
 </template>
 
 <script>
     export default {
-        name: "Home"
+        name: "Home",
+        data(){
+            return{
+                api:process.env.VUE_APP_URL
+            }
+        }
     }
 </script>
 
@@ -16,9 +22,5 @@
         margin: 0;
         padding: 0;
     }
-    div{
-        background-color: #2c3e50;
-        height: 400px;
-        width: 100%;
-    }
+
 </style>
