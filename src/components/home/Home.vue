@@ -1,13 +1,17 @@
 <template>
     <div>
         this is home
-        <img src="../../assets/home.png">
+        <TabBar />
     </div>
 </template>
 
 <script>
+    import TabBar from '../TabBar'
     export default {
-        name: "Home"
+        name: "Home",
+        components:{
+            TabBar
+        }
     }
 </script>
 
@@ -15,10 +19,5 @@
     *{
         margin: 0;
         padding: 0;
-    }
-    div{
-        background-color: #2c3e50;
-        height: 400px;
-        width: 100%;
     }
 </style>

@@ -15,13 +15,18 @@
                 <span>this is list{{item.message}}</span>
             </li>
         </ul>
+        <TabBar />
     </div>
 
 </template>
 
 <script>
+    import TabBar from '../TabBar'
     export default {
         name: "List",
+        components:{
+            TabBar
+        },
         methods:{
             itemClick(index){
                 // eslint-disable-next-line no-console

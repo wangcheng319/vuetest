@@ -10,7 +10,7 @@ import Details from "../components/list/details/Details";
 export default [
     {
         //默认到首页的home tab项
-        path:"/home",
+        path:"/",
         component:App,
         children:[
             {

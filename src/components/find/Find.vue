@@ -1,12 +1,17 @@
 <template>
     <div>
-        this is find
+
+        <TabBar/>
     </div>
 </template>
 
 <script>
+    import TabBar from '../TabBar'
     export default {
-        name: "Find"
+        name: "Find",
+        components:{
+            TabBar
+        }
     }
 </script>
 

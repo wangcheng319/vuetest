@@ -1,24 +1,6 @@
 <template>
   <div id="app">
     <router-view></router-view>
-      <footer v-show="$route.meta.navShow==undefined||$route.meta.navShow">
-          <div class="tab-item" @click="goto(1)">
-              <img :src = "'/home' == $route.path ? this.tabBarImages[0].selected:this.tabBarImages[0].normal">
-              <span :class="{selected:'/home'==$route.path}">首页</span>
-          </div>
-          <div class="tab-item" @click="goto(2)">
-              <img :src = "'/list' == $route.path ? this.tabBarImages[1].selected:this.tabBarImages[1].normal">
-              <span :class="{selected: '/list'==$route.path}">列表</span>
-          </div>
-          <div class="tab-item" @click="goto(3)">
-              <img :src = "'/find' == $route.path ? this.tabBarImages[2].selected:this.tabBarImages[2].normal">
-              <span :class="{selected:'/find'==$route.path}">发现</span>
-          </div>
-          <div class="tab-item" @click="goto(4)">
-              <img :src = "'/me' == $route.path ? this.tabBarImages[3].selected:this.tabBarImages[3].normal">
-              <span :class="{selected:'/me'==$route.path}">我的</span>
-          </div>
-      </footer>
   </div>
 </template>
 
