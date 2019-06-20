@@ -14,6 +14,7 @@
 </template>
 
 <script>
+    import api from '../api'
     export default {
         name: "Login",
 
@@ -35,6 +36,8 @@
                     window.console.log('密码不正确')
                     return;
                 }
+
+                window.console.log(api.LOGIN)
 
                 this.$router.push("/home")
             }
