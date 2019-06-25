@@ -1,18 +1,16 @@
 <template>
     <div>
         this is home
-        <img src="../../assets/home.png">
-        <p>{{api}}</p>
+        <TabBar />
     </div>
 </template>
 
 <script>
+    import TabBar from '../TabBar'
     export default {
         name: "Home",
-        data(){
-            return{
-                api:process.env.VUE_APP_URL
-            }
+        components:{
+            TabBar
         }
     }
 </script>
@@ -22,5 +20,4 @@
         margin: 0;
         padding: 0;
     }
-
 </style>

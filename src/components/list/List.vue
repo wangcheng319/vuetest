@@ -10,22 +10,23 @@
                 </li>
             </ul>
         </header>
-        <div class="list-wrapper" ref="wrapper">
-            <ul class="lists">
-                <li v-for="(item,index) in items" :key="index" @click="itemClick(index)" class="list_item">
-                    <span>this is list{{item.message}}</span>
-                </li>
-            </ul>
-        </div>
+        <ul class="lists">
+            <li v-for="(item,index) in items" :key="index" @click="itemClick(index)" class="list_item">
+                <span>this is list{{item.message}}</span>
+            </li>
+        </ul>
+        <TabBar />
     </div>
 
 </template>
 
 <script>
-    import Bscroll from '@better-scroll/core'
-
+    import TabBar from '../TabBar'
     export default {
         name: "List",
+        components:{
+            TabBar
+        },
         methods:{
             itemClick(index){
                 // eslint-disable-next-line no-console
@@ -86,10 +87,6 @@
         },
         mounted() {
             window.addEventListener("scroll",this.onScroll)
-
-            this.$nextTick(() => {
-                this.scroll = new Bscroll(this.$refs.wrapper, {})
-            })
         }
     }
 </script>
