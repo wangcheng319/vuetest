@@ -70,11 +70,11 @@
         },
         methods:{
             bindCheckBox(value){
-                window.console.log(this.isChecked)
-                for (let lengthKey in this.isChecked.length) {
-                    if (value.target.value !== this.isChecked[lengthKey]){
-                        this.isChecked[lengthKey] = {
-                            important:""
+                window.console.log(value.target.checked)
+                if (!value.target.checked){
+                    for (let i = 0; i < this.isChecked.length ; i++) {
+                        if (value.target.defaultValue == this.isChecked[i].name){
+                            this.isChecked[i].important = ""
                         }
                     }
                 }
