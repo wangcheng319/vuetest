@@ -7,6 +7,6 @@ module.exports = {
         open:true,//是否自动打开
         host:'0.0.0.0',//真机测试如此设置
         port:8081,
-        https:true
+        https:false
     }
 }

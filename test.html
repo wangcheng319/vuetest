@@ -16,19 +16,42 @@
                    setTimeout(function () {
                        console.log('网络请求')
                        if (time>100){
-                           reject('fail')
+                           reject('fail'+time)
                        } else{
-                           resolve('done')
+                           resolve('value'+time)
                        }
                    },5000)
                })
             }
 
-            asyncTest(99).then((data)=>{
-                console.log(data)
-            }).catch((reason)=>{
+            asyncTest(99)
+              .then((data)=>{
+                  console.log(data)
+                  return asyncTest(98)})
+                .then((data)=>{
+                    console.log(data)
+                    return asyncTest(101)
+                    })
+                .then(data => console.log(data))
+              .catch((reason)=>{
                 console.log(reason)
             })
+
+            function awaittest(data){
+
+                return data;
+            }
+
+            async function test(){
+               var value1 = await awaittest(1)
+                var value2 = await awaittest(value1+1)
+                var value3 = await awaittest(value2+1)
+
+                console.log(value1)
+                console.log(value2)
+                console.log(value3)
+            }
+            test()
         }
     </script>
 
@@ -41,8 +64,6 @@
             display: flex;
             width: 300px;
             height: 300px;
-            background-color: #2c3e50;
-            flex-direction: column;
         }
 
         .one{
@@ -65,15 +86,37 @@
             justify-content: center;
             align-items: center;
         }
+
+        input[type='checkbox']{
+            width: 20px;
+            height: 20px;
+            background-color: #fff;
+            -webkit-appearance:none;
+            border: 1px solid #c9c9c9;
+            border-radius: 2px;
+            outline: none;
+        }
+
+        .checkBox{display: flex;align-items: center}
+        .checkBox input[type=checkbox]:checked{
+            background: url("src/assets/check-box.png")no-repeat center;
+        }
     </style>
 </head>
 <body>
    <div class="content">
-       <div class="one"></div>
-       <div class="two"></div>
-       <button class="three" id="btn"></button>
-       <a href="weixin://">打开微信</a>
+
+       <label class="checkBox">
+           <input type="checkbox">
+           <img src="src/assets/logo.png" style="width: 30px;height: 30px;"/>
+           <span>重要</span>
+           <input type="radio" name="value" value="1">重要
+           <input type="radio" name="value" value="2">次要
+       </label>
+
    </div>
+
+
 
 </body>
 </html>
