@@ -8,6 +8,11 @@
             <input type="radio" :name="item.name" value="次要" v-model="item.important" >次要
         </label>
 
+        this is home
+        <div>
+            {{this.value | Up}}
+        </div>
+
         <TabBar />
     </div>
 </template>
@@ -22,6 +27,7 @@
         data(){
             return{
                 radio:"",
+                value:3,
                 isChecked: [],
                 checks: [
                     {
@@ -75,6 +81,18 @@
             }
         },
         watch: {
+
+        },
+
+        filters:{
+            //过滤器,使用方式{{value|Up}} 或者<div v-bind:id="value | Up"></div>
+            //可以用多个过滤器{{value | Up | Down}}
+            Up:function (value) {
+                return value+1
+            },
+            Down(value){
+                return value-1
+            }
 
         }
     }
