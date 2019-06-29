@@ -1,13 +1,13 @@
 <template>
     <div>
-        <label class="checkBox shadow" v-for="(item, index) in checks" :key="index">
-            <input type="checkbox" v-model="isChecked" :value="item" @change="bindCheckBox(item)">
-            <img src="../../assets/logo.png" style="width: 30px;height: 30px;"/>
-            <span>{{item.name}}</span>
+        <label class="checkBox shadow" v-for="(item, index) in checks" :key="index" :class="{checked:item.important == 0 ? false : true}">
+            <input type="checkbox" v-model="isChecked" :value="item" @change="bindCheckBox(item)" style="margin-left:38px">
+            <img src="../../assets/头像@2x.png" style="width: 50px;height: 50px;margin-left: 38px"/>
+            <span style="margin-left: 9px">{{item.name}}</span>
             <input type="radio" :name="item.name" value="重要" v-model="item.important" @change="bindRadio" class="radio-box" :disabled="item.important == 0 ? true:false">
-            <label>重要</label>
+            <label style="margin-left: 20px">重要</label>
             <input type="radio" :name="item.name" value="次要" v-model="item.important" @change="bindRadio" class="radio-box" :disabled="item.important == 0 ? true:false">
-            <label>次要</label>
+            <label style="margin-left: 20px">次要</label>
         </label>
 
         <TabBar />
@@ -114,7 +114,6 @@
     .checkBox{
         display: flex;
         align-items: center;
-        justify-content: center;
         width:521px;
         height:70px;
         margin-top:35px;
@@ -125,11 +124,30 @@
         border-radius:5px;
     }
     .checkBox input[type=checkbox]:checked{
-        background: url("../../assets/check-box.png")no-repeat center;
+        width: 24px;
+        height: 24px;
+        background: url("../../assets/checked.png")no-repeat center;
     }
 
     .checkBox input[type=checkbox]{
+        width: 24px;
+        height: 24px;
         background: url("../../assets/unchecked.png")no-repeat center;
     }
-    
+
+    .checkBox input[type=radio]:checked{
+        background: url("../../assets/checked.png")no-repeat center;
+    }
+
+    .checkBox input[type=radio]{
+        background: url("../../assets/unchecked.png")no-repeat center;
+    }
+
+    .checked{
+        /*background-color: #42b983;*/
+    }
+
+    .radio-box{
+        margin-left: 52px;
+    }
 </style>

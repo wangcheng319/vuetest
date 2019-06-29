@@ -5,7 +5,6 @@ import Home from "../components/home/Home";
 import Find from "../components/find/Find";
 import Me from "../components/me/Me";
 import Details from "../components/list/details/Details";
-import TabBar from '../components/TabBar'
 
 export default [
     {
