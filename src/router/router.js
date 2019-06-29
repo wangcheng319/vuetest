@@ -5,12 +5,13 @@ import Home from "../components/home/Home";
 import Find from "../components/find/Find";
 import Me from "../components/me/Me";
 import Details from "../components/list/details/Details";
+import TabBar from '../components/TabBar'
 
 export default [
     {
         //默认到首页的home tab项
-        path:"/home",
-        component:App,
+        path:"/",
+        component:Home,
         children:[
             {
                 path:"/home",
@@ -48,4 +49,5 @@ export default [
         path:"/",
         redirect:"/home"
     }
+
     ]

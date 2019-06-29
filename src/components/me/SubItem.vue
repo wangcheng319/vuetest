@@ -4,7 +4,7 @@
 
         <button @click="toggle">动画-向左移动</button>
         <!--动画都包裹在transition里面，name相当于重新命名-->
-        <transition name="right" >
+        <transition name="bounce" >
             <div class="to-right" v-show="isshow"></div>
         </transition>
     </div>
@@ -42,13 +42,31 @@
     }
 
     .right-enter,right-leave-to{
-        margin-left: 100px;
-        transition: 3s;
+        transform: translateX(50px);
+        transition: 10s;
     }
 
     .right-enter-to,right-leave{
-        margin-left: 30px;
-        transition: 3s;
+        transform: translateX(50px);
+        transition: 10s;
+    }
+
+    .bounce-enter-active {
+        animation: bounce-in .5s;
+    }
+    .bounce-leave-active {
+        animation: bounce-in .5s reverse;
+    }
+    @keyframes bounce-in {
+        0% {
+            transform: scale(0.5);
+        }
+        50% {
+            transform: scale(1.5);
+        }
+        100% {
+            transform: scale(1);
+        }
     }
 
 
