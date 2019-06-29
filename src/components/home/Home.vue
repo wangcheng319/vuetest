@@ -1,17 +1,14 @@
 <template>
     <div>
         <label class="checkBox shadow" v-for="(item, index) in checks" :key="index">
-            <input type="checkbox" v-model="isChecked" :value="item" @change="bindCheckBox">
+            <input type="checkbox" v-model="isChecked" :value="item" @change="bindCheckBox(item)">
             <img src="../../assets/logo.png" style="width: 30px;height: 30px;"/>
             <span>{{item.name}}</span>
-            <input type="radio" :name="item.name" value="重要" v-model="item.important" >重要
-            <input type="radio" :name="item.name" value="次要" v-model="item.important" >次要
+            <input type="radio" :name="item.name" value="重要" v-model="item.important" @change="bindRadio" class="radio-box" :disabled="item.important == 0 ? true:false">
+            <label>重要</label>
+            <input type="radio" :name="item.name" value="次要" v-model="item.important" @change="bindRadio" class="radio-box" :disabled="item.important == 0 ? true:false">
+            <label>次要</label>
         </label>
-
-        this is home
-        <div>
-            {{this.value | Up}}
-        </div>
 
         <TabBar />
     </div>
@@ -26,42 +23,40 @@
         },
         data(){
             return{
-                radio:"",
-                value:3,
                 isChecked: [],
                 checks: [
                     {
                         name:"病有所医",
-                        important:"重要"
+                        important:""
                     },
                     {
                         name:"赡养父母",
-                        important:"重要"
+                        important:""
                     },
-                    // {
-                    //     name:"退休生活",
-                    //     important:""
-                    // },
-                    // {
-                    //     name:"子女教育",
-                    //     important:""
-                    // },
-                    // {
-                    //     name:"买车换车",
-                    //     important:""
-                    // },
-                    // {
-                    //     name:"还清贷款",
-                    //     important:""
-                    // },
-                    // {
-                    //     name:"买房换房",
-                    //     important:""
-                    // },
-                    // {
-                    //     name:"旅游玩乐",
-                    //     important:""
-                    // },
+                    {
+                        name:"退休生活",
+                        important:""
+                    },
+                    {
+                        name:"子女教育",
+                        important:""
+                    },
+                    {
+                        name:"买车换车",
+                        important:""
+                    },
+                    {
+                        name:"还清贷款",
+                        important:""
+                    },
+                    {
+                        name:"买房换房",
+                        important:""
+                    },
+                    {
+                        name:"旅游玩乐",
+                        important:""
+                    },
                 ],
             }
         },
@@ -70,14 +65,16 @@
         },
         methods:{
             bindCheckBox(value){
-                window.console.log(value.target.checked)
-                if (!value.target.checked){
-                    for (let i = 0; i < this.isChecked.length ; i++) {
-                        if (value.target.defaultValue == this.isChecked[i].name){
-                            this.isChecked[i].important = ""
-                        }
-                    }
+                if (!value.important){
+                    value.important = "重要"
+                } else{
+                    value.important = ""
                 }
+                window.console.log(JSON.stringify(this.isChecked))
+            },
+
+            bindRadio(){
+                window.console.log(JSON.stringify(this.isChecked))
             }
         },
         watch: {
@@ -130,4 +127,9 @@
     .checkBox input[type=checkbox]:checked{
         background: url("../../assets/check-box.png")no-repeat center;
     }
+
+    .checkBox input[type=checkbox]{
+        background: url("../../assets/unchecked.png")no-repeat center;
+    }
+    
 </style>
