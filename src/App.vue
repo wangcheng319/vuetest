@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div>
     <router-view></router-view>
   </div>
 </template>
@@ -9,36 +9,14 @@ export default {
   name: 'app',
     data(){
       return{
-        tabBarImages:[
-            {normal:require('./assets/home.png'),selected:require('./assets/home_.png')},
-            {normal:require('./assets/list.png'),selected:require('./assets/list_.png')},
-            {normal:require('./assets/faxian.png'),selected:require('./assets/faxian_.png')},
-            {normal:require('./assets/wode.png'),selected:require('./assets/wode_.png')}
-        ],
+
       }
     },
   components: {
 
   },
   methods:{
-    goto(index){
-      // eslint-disable-next-line no-console
-        console.log(index)
-      switch (index) {
-        case 1:
-          this.$router.replace('/home')
-          break
-        case 2:
-          this.$router.replace("/list")
-          break
-        case 3:
-          this.$router.replace("/find")
-          break
-        case 4:
-          this.$router.replace("/me")
-          break
-      }
-    }
+    
   }
 }
 </script>

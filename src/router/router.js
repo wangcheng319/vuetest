@@ -2,7 +2,6 @@
 import App from "../App"
 import Login from "../components/login/Login";
 import Home from "../components/home/Home";
-import List from "../components/list/List";
 import Find from "../components/find/Find";
 import Me from "../components/me/Me";
 import Details from "../components/list/details/Details";
@@ -10,16 +9,17 @@ import Details from "../components/list/details/Details";
 export default [
     {
         //默认到首页的home tab项
-        path:"/",
+        path:"/home",
         component:App,
         children:[
             {
                 path:"/home",
-                component:Home,
+                component:Home,//这样会提前加载
             },
             {
                 path:"/list",
-                component:List,
+                name:'list',
+                component:() => import('../components/list/List'),//这种是按需加载
             },
             {
                 path:"/find",

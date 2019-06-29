@@ -14,9 +14,9 @@ const router = new Router({
 
 //用于做各种路由判断
 router.beforeEach((to,from,next)=>{
-  if (to.name === 'me'){
-    router.push('/login',)
-  }
+  // if (to.name === 'me'){
+  //   router.push('/login',)
+  // }
   next();
 
 })
