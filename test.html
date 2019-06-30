@@ -4,58 +4,7 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <script>
-        var c = (a,b)=>{a+b}
-        window.onload = function () {
-            var str = ""
-            var x = str == ""?4:5
-            console.log(x)
-           document.getElementById("btn").addEventListener("click",function () {
 
-           })
-
-            var asyncTest = function(time){
-               return new Promise((resolve, reject)=>{
-                   console.log('执行异步任务')
-                   setTimeout(function () {
-                       console.log('网络请求')
-                       if (time>100){
-                           reject('fail'+time)
-                       } else{
-                           resolve('value'+time)
-                       }
-                   },5000)
-               })
-            }
-
-            asyncTest(99)
-              .then((data)=>{
-                  console.log(data)
-                  return asyncTest(98)})
-                .then((data)=>{
-                    console.log(data)
-                    return asyncTest(101)
-                    })
-                .then(data => console.log(data))
-              .catch((reason)=>{
-                console.log(reason)
-            })
-
-            function awaittest(data){
-
-                return data;
-            }
-
-            async function test(){
-               var value1 = await awaittest(1)
-                var value2 = await awaittest(value1+1)
-                var value3 = await awaittest(value2+1)
-
-                console.log(value1)
-                console.log(value2)
-                console.log(value3)
-            }
-            test()
-        }
     </script>
 
     <style>
@@ -63,79 +12,36 @@
             padding: 0;
             margin: 0;
         }
-        .content{
-            display: flex;
-            width: 300px;
-            height: 300px;
-            padding: 20px;
-        }
 
-        .one{
-            width: 100%;
-            flex: 1;
-            background-color: #42b983;
-        }
-        .two{
-            width: 100%;
-           flex: 1;
-            background-color: #1296db;
-        }
-
-        .three{
-            width: 100%;
-            flex: 1;
-            background-color: red;
-            text-align: center;
+        .type{
             display: flex;
+            flex-direction: column;
             justify-content: center;
-            align-items: center;
         }
 
-        .advice{
-            height: 24px;
-            width: 24px;
-            display: inline-block;
-            background-image: url('src/assets/unchecked.png');
-            background-repeat: no-repeat;
-            background-position: center;
-            vertical-align: middle;
-            margin-top: -4px;
-        }
-
-        input[type="radio"]:checked + .advice{
-            background-image: url('src/assets/checked.png');
-        }
     </style>
 
-    <script>
-        alert('hello')
-    </script>
 </head>
 <body>
-   <div class="content">
+    <div>
 
-       <label>
-           <input type="radio" name="type" id="adviceRadio1" value="1" checked hidden/>
-           <label for="adviceRadio1" class="advice"></label>
-           <span class="radio-name">问题</span>
-       </label>
-       <label>
-           <input type="radio" name="type" id="adviceRadio2" value="2" hidden/>
-           <label for="adviceRadio2" class="advice"></label>
-           <span class="radio-name">建议</span>
-       </label>
-       <span id="result">1</span>
+            <label class="type" id="type1">
+                <img src="src/assets/头像@2x.png" style="width: 50px;height: 50px"/>
+                <span>我是爸爸</span>
+                <input type="radio" name="选" value="1">你好
+                <span>我的年龄</span>
+                <label for="type1"><input placeholder="请输入年龄"></label>
+            <label/>
 
-   </div>
+            <label class="type" id="type2">
+                <img src="src/assets/头像@2x.png"/>
+                <span>我是妈妈</span>
+                <input type="radio" name="选" value="2">hello
+                <span>我的年龄</span>
+                <label for="type2"><input placeholder="请输入年龄"></label>
+            </label>
 
+    </div>
 
-
-        <div>
-            <div>
-                <div></div>
-                <div></div>
-                <div></div>
-            </div>
-        </div>
 </body>
 </html>
