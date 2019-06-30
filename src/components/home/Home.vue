@@ -1,14 +1,29 @@
 <template>
     <div>
-        <label class="checkBox shadow" v-for="(item, index) in checks" :key="index" :class="{checked:item.important == 0 ? false : true}">
+        <div class="checkBox shadow" v-for="(item, index) in checks" :key="index" :class="{checked:item.important == 0 ? true : false}">
             <input type="checkbox" v-model="isChecked" :value="item" @change="bindCheckBox(item)" style="margin-left:38px">
             <img src="../../assets/头像@2x.png" style="width: 50px;height: 50px;margin-left: 38px"/>
             <span style="margin-left: 9px">{{item.name}}</span>
-            <input type="radio" :name="item.name" value="重要" v-model="item.important" @change="bindRadio" class="radio-box" :disabled="item.important == 0 ? true:false">
-            <label style="margin-left: 20px">重要</label>
-            <input type="radio" :name="item.name" value="次要" v-model="item.important" @change="bindRadio" class="radio-box" :disabled="item.important == 0 ? true:false">
-            <label style="margin-left: 20px">次要</label>
-        </label>
+
+            <!--<input type="radio" :name="item.name" value="重要" v-model="item.important" @change="bindRadio" class="radio-box" :disabled="item.important == 0 ? true:false">-->
+            <!--<label style="margin-left: 20px" class="radioChecked">重要</label>-->
+
+            <!--<input type="radio" :name="item.name" value="次要" v-model="item.important" @change="bindRadio" class="radio-box" :disabled="item.important == 0 ? true:false">-->
+            <!--<label style="margin-left: 20px" class="radioChecked">次要</label>-->
+
+            <label class="radio-box">
+                <input type="radio" :name="item.name" value="重要" v-model="item.important" @change="bindRadio" class="radio-box" :disabled="item.important == 0 ? true:false"
+                       id="adviceRadio1" checked hidden>
+                <label for="adviceRadio1" class="advice"></label>
+                <span class="radio-name" style="margin-left: 20px">重要</span>
+            </label>
+            <label class="radio-box">
+                <input type="radio" :name="item.name" value="次要" v-model="item.important" @change="bindRadio" class="radio-box" :disabled="item.important == 0 ? true:false"
+                       id="adviceRadio2"  hidden>
+                <label for="adviceRadio2" class="advice"></label>
+                <span class="radio-name" style="margin-left: 20px">次要</span>
+            </label>
+        </div>
 
         <TabBar />
     </div>
@@ -135,19 +150,27 @@
         background: url("../../assets/unchecked.png")no-repeat center;
     }
 
-    .checkBox input[type=radio]:checked{
-        background: url("../../assets/checked.png")no-repeat center;
-    }
-
-    .checkBox input[type=radio]{
-        background: url("../../assets/unchecked.png")no-repeat center;
-    }
-
     .checked{
         /*background-color: #42b983;*/
+        opacity: 0.5;
     }
 
     .radio-box{
         margin-left: 52px;
+    }
+
+    .advice{
+        height: 24px;
+        width: 24px;
+        display: inline-block;
+        background-image: url('../../assets/radio-normal.png');
+        background-repeat: no-repeat;
+        background-position: center;
+        vertical-align: middle;
+        margin-top: -4px;
+    }
+
+    input[type="radio"]:checked + .advice{
+        background-image: url('../../assets/radio-checked.png');
     }
 </style>

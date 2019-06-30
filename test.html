@@ -67,6 +67,7 @@
             display: flex;
             width: 300px;
             height: 300px;
+            padding: 20px;
         }
 
         .one{
@@ -90,19 +91,19 @@
             align-items: center;
         }
 
-        input[type='checkbox']{
-            width: 20px;
-            height: 20px;
-            background-color: #fff;
-            -webkit-appearance:none;
-            border: 1px solid #c9c9c9;
-            border-radius: 2px;
-            outline: none;
+        .advice{
+            height: 24px;
+            width: 24px;
+            display: inline-block;
+            background-image: url('src/assets/unchecked.png');
+            background-repeat: no-repeat;
+            background-position: center;
+            vertical-align: middle;
+            margin-top: -4px;
         }
 
-        .checkBox{display: flex;align-items: center}
-        .checkBox input[type=checkbox]:checked{
-            background: url("src/assets/check-box.png")no-repeat center;
+        input[type="radio"]:checked + .advice{
+            background-image: url('src/assets/checked.png');
         }
     </style>
 
@@ -113,13 +114,17 @@
 <body>
    <div class="content">
 
-       <label class="checkBox">
-           <input type="checkbox">
-           <img src="src/assets/logo.png" style="width: 30px;height: 30px;"/>
-           <span>重要</span>
-           <input type="radio" name="value" value="1">重要
-           <input type="radio" name="value" value="2">次要
+       <label>
+           <input type="radio" name="type" id="adviceRadio1" value="1" checked hidden/>
+           <label for="adviceRadio1" class="advice"></label>
+           <span class="radio-name">问题</span>
        </label>
+       <label>
+           <input type="radio" name="type" id="adviceRadio2" value="2" hidden/>
+           <label for="adviceRadio2" class="advice"></label>
+           <span class="radio-name">建议</span>
+       </label>
+       <span id="result">1</span>
 
    </div>
 
