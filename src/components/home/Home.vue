@@ -5,15 +5,18 @@
             <img src="../../assets/头像@2x.png" style="width: 50px;height: 50px;margin-left: 38px"/>
             <span style="margin-left: 9px">{{item.name}}</span>
 
-            <label>
+            <label  class="radio-item" style="display: flex;align-items: center">
                 <input type="radio" :name="item.name" value="重要" v-model="item.important" @change="bindRadio" class="radio-box" :disabled="item.important == 0 ? true:false">
+                <span class="radio"></span>
                 <span style="margin-left: 20px">重要</span>
             </label>
 
-            <label>
+            <label class="radio-item" style="display: flex;align-items: center">
                 <input type="radio" :name="item.name" value="次要" v-model="item.important" @change="bindRadio" class="radio-box" :disabled="item.important == 0 ? true:false">
+                <span class="radio"></span>
                 <span style="margin-left: 20px">次要</span>
             </label>
+
         </div>
 
         <TabBar />
@@ -164,5 +167,43 @@
         margin-left: 52px;
         padding: 0 20px;
     }
+
+    .radio-item .radio{
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        border:  3px solid gainsboro;
+        cursor: pointer;
+    }
+    /*加号表示选择下一个兄弟元素*/
+    .radio-item input:checked+.radio{
+        border-color: dodgerblue;
+    }
+
+    .radio-item input:checked+.radio::after{
+        content: "";
+        width: 12px;
+        height: 12px;
+        background-color: dodgerblue;
+        border-radius: 50%;
+        display: block;
+        margin-left: 4px;
+        margin-top: 4px;
+    }
+    /*波浪号表示选择所有剩下的兄弟元素*/
+    .radio-item input:checked~span{
+        color: dodgerblue;
+        margin-left: 16px;
+    }
+
+    .radio-item input~span{
+        margin-left: 16px;
+    }
+
+    .radio-item input[type='radio']{
+        display: none;
+    }
+
 
 </style>

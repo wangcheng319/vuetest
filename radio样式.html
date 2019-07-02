@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+
+    </script>
+
+    <style>
+        body{
+            padding: 0;
+            margin: 0;
+        }
+
+        .radio-item .radio{
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            border:  3px solid gainsboro;
+            cursor: pointer;
+        }
+        /*加号表示选择下一个兄弟元素*/
+        .radio-item input:checked+.radio{
+            border-color: dodgerblue;
+        }
+
+        .radio-item input:checked+.radio::after{
+            content: "";
+            width: 12px;
+            height: 12px;
+            background-color: dodgerblue;
+            border-radius: 50%;
+            display: block;
+            margin-left: 4px;
+            margin-top: 4px;
+        }
+        /*波浪号表示选择所有剩下的兄弟元素*/
+        .radio-item input:checked~span{
+            color: dodgerblue;
+            margin-left: 16px;
+        }
+
+        .radio-item input~span{
+            margin-left: 16px;
+        }
+
+        .radio-item input[type='radio']{
+            display: none;
+        }
+
+    </style>
+
+</head>
+<body>
+    <div style="margin: 32px">
+        <p>
+            <label class="radio-item" style="display: flex;align-items: center">
+                <input  type="radio" name = 'gender'>
+                <span class="radio"></span>
+                <span>男</span>
+            </label>
+        </p>
+
+        <p >
+            <label class="radio-item" style="display: flex;align-items: center">
+                <input  type="radio" name = 'gender'>
+                <span class="radio"></span>
+                <span>女</span>
+            </label>
+        </p>
+
+    </div>
+
+    <div class="div1">
+        <div class="div2"></div>
+    </div>
+
+
+
+
+</body>
+</html>
