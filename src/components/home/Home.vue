@@ -193,11 +193,12 @@
     }
     /*波浪号表示选择所有剩下的兄弟元素*/
     .radio-item input:checked~span{
-        color: dodgerblue;
+        color: black;
         margin-left: 16px;
     }
 
     .radio-item input~span{
+        color: gray;
         margin-left: 16px;
     }
 

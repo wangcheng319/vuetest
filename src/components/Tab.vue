@@ -2,31 +2,29 @@
     <div>
         <div class="wrap">
 
-                <label class="radio-item" style="display: flex;align-items: center;flex-direction: column">
-                    <span :class="{blue:isChecked1}">选择用户</span>
-                    <input  type="radio" name = 'gender' @change="onChange1" checked>
-                    <span class="radio"></span>
-                </label>
+            <label class="radio-item" style="display: flex;align-items: center;flex-direction: column">
+                <span :class="{blue:isChecked1}">选择用户</span>
+                <input  type="radio" name = 'gender' @change="onChange1" checked>
+                <span class="radio"></span>
+            </label>
 
-                <label class="radio-item" style="display: flex;align-items: center;flex-direction: column">
-                    <span :class="{blue:isChecked2}">添加用户</span>
-                    <input  type="radio" name = 'gender' @change="onChange2">
-                    <span class="radio"></span>
-                </label>
+            <label class="radio-item" style="display: flex;align-items: center;flex-direction: column">
+                <span :class="{blue:isChecked2}">添加用户</span>
+                <input  type="radio" name = 'gender' @change="onChange2">
+                <span class="radio"></span>
+            </label>
 
         </div>
         <div class="content">
             <p v-if="isChecked1">选择用户</p>
             <p v-if="isChecked2">添加用户</p>
         </div>
-        <TabBar/>
     </div>
 </template>
 
 <script>
-    import TabBar from '../TabBar'
     export default {
-        name: "Find",
+        name: "Tab",
         data(){
             return{
                 isChecked1:true,
@@ -34,7 +32,6 @@
             }
         },
         components:{
-            TabBar
         },
         methods:{
             onChange1(value){

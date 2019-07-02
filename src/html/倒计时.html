@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        window.onload = function() {
+            //setInterval,倒计时
+            var count = 10;
+            let interval = setInterval(()=>{
+                if (count == 0){
+                    clearInterval(interval)
+                    console.log('stop')
+                }
+                count --
+                console.log(count)
+            },1000)
+
+            //多少秒后执行
+            let timeout = setTimeout(()=>{
+                console.log('5秒后执行')
+                clearTimeout(timeout)
+            },5000)
+
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>
