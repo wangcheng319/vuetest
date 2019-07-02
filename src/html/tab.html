@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+        *{margin: 0;padding: 0;}
+        .m-tab{position: relative;padding: 0.40rem 0 0; width: 100%;background: #fff;}
+        .m-tab a{position: absolute; display: inline-block;width: 50%; font-size: 0.14rem;color: #2C2C2C;letter-spacing: 0;line-height: 0.38rem;text-align: center;text-decoration: none;}
+        .m-tab a:first-child{top: 0;left: 0; }
+        .m-tab a.m-coupons{top:0; right:0;}
+        .m-tab a.active{border-bottom: 2px solid #FFAC28;}
+        .m-pision{height: 1px; background:#EBEBEB;}
+        .m-view1{background: #fff;height: 200px;}
+        .m-view2{background: #fff;height: 200px;}
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <p class="m-tab">
+            <a href="javascript：void(0);" id="m-my-invite" class="active">我邀请的好友</a>
+            <a href="javascript：void(0);" id="m-my-coupons" class="m-coupons">我的赠送券</a>
+        <p class="m-pision"></p>
+        </p>
+        <p id="m-view1" class="m-view1">
+            1
+        </p>
+        <p id="m-view2" class="m-view2" style="display: none;">
+            2
+        </p>
+
+        <p style="background-color: #1296db"> <img src="../assets/矢量智能对象.png" style="width: 100px">
+            <img src="../assets/返回按钮@2x.png">
+        </p>
+
+
+
+    </div>
+</body>
+</html>

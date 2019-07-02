@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        label{
+            display:inline-block;
+            width:465px;
+            height:150px;
+            text-align:left;
+            position: relative;
+            margin-top: 25px;
+        }
+        label input{
+            width: 15px;
+            height: 15px;
+            vertical-align: bottom;
+            opacity: 0;
+        }
+        .spot{
+            display:inline-block;
+            width:465px;
+            height:150px;
+            background:url("src/assets/女1.png") no-repeat;  /*默认的样式图片*/
+            position: absolute;
+            left:0;
+            z-index:5;
+        }
+        input:checked + .spot{
+            background:url("src/assets/女.png") no-repeat;  /*选中后的样式图片*/
+            width:500px;
+            height:165px;
+        }
+
+        .spot1{
+            display:inline-block;
+            width:465px;
+            height:150px;
+            background:url("src/assets/男.png") no-repeat;  /*默认的样式图片*/
+            position: absolute;
+            left:0;
+            z-index:5;
+        }
+        input:checked + .spot1{
+            background:url("src/assets/男1.png") no-repeat;  /*选中后的样式图片*/
+            width:500px;
+            height:165px;
+        }
+        .cont{
+            display: flex;
+            flex-direction: column;
+        }
+    </style>
+</head>
+<body>
+
+<div class="cont">
+    <label><input type="radio" name="1"><i class="spot"></i></label>
+    <label><input type="radio" name="1"><i class="spot1"></i></label>
+</div>
+</body>
+</html>

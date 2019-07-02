@@ -29,6 +29,7 @@
         },
         data(){
             return{
+                imgurl:"",
                 isChecked: [],
                 checks: [
                     {
@@ -81,6 +82,17 @@
 
             bindRadio(){
                 window.console.log(JSON.stringify(this.isChecked))
+            },
+
+            imgurl1() {
+                // let value1 = value;
+                // if (value1 === "病有所医"){
+                //     this.imgurl = "../../assets/头像@2x.png"
+                // }else{
+                //     this.imgurl = "../../assets/.png"
+                // }
+
+                return "../../assets/头像@2x.png";
             }
         },
         watch: {
