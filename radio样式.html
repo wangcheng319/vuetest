@@ -50,6 +50,41 @@
             display: none;
         }
 
+        .btn{
+            background: none;
+            outline: none;
+            border: none;
+        }
+        .btn::before{
+            content: 'before';
+            display: block;
+            width: 30px;
+            height: 30px;
+            background-color: #1296db;
+            color: white;
+            margin-bottom: -25px;
+            margin-right: 60px;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .btn::after{
+            content: 'before';
+            display: block;
+            width: 30px;
+            height: 30px;
+            background-color: #1296db;
+            color: white;
+            margin-bottom: 25px;
+            margin-left: 60px;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
     </style>
 
 </head>
@@ -77,8 +112,13 @@
         <div class="div2"></div>
     </div>
 
+    <button class="btn">btn</button>
 
 
+    <div style="display: flex;justify-content: center;align-items: center">
+        <span>婚期：2019-07-04</span>
+        <img src="src/assets/修改.png" style="margin-left: 10px">
+    </div>
 
 </body>
 </html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        window.onload = function () {
+            var a = 10;
+            /*Promise构造函数接受一个函数作为参数，该函数的两个参数分别是resolve和reject。它们是两个函数，由 JavaScript 引擎提供，不用自己部署。*/
+            let promise = new Promise((resolve, reject) => {
+                if (a>10){
+                    resolve('a>10')
+                } else{
+                    reject('a<10')
+                }
+            })
+
+            /*Promise实例生成以后，可以用then方法分别指定resolved状态和rejected状态的回调函数。
+            then方法可以接受两个回调函数作为参数。第一个回调函数是Promise对象的状态变为resolved时调用，
+            第二个回调函数是Promise对象的状态变为rejected时调用。
+            其中，第二个函数是可选的，不一定要提供。*/
+            promise.then(value => {
+                console.log(value+"可以执行第二个请求")
+            },error =>{
+                console.log(error)
+            })
+
+
+            function timeout(ms) {
+                return new Promise((resolve, reject) => {
+                    setTimeout(resolve, ms, 'done');
+                });
+            }
+
+            timeout(100).then((value) => {
+                console.log(value);
+            });
+        }
+    </script>
+
+    <script src="./../ts/FirstTs.ts"/>
+</head>
+<body>
+
+</body>
+</html>
