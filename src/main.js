@@ -1,4 +1,5 @@
 import Vue from 'vue'
+import './cube-ui'
 import App from './App.vue'
 import Router from 'vue-router'
 import routes from './router/router'
@@ -7,6 +8,9 @@ import VueX from 'vuex'
 Vue.config.productionTip = false
 Vue.use(Router)
 Vue.use(VueX)
+import Cube from 'cube-ui'
+
+Vue.use(Cube)
 
 const router = new Router({
   routes,

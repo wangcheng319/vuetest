@@ -5,12 +5,14 @@ import Home from "../components/home/Home";
 import Find from "../components/find/Find";
 import Me from "../components/me/Me";
 import Details from "../components/list/details/Details";
+import Ruler from "../components/Ruler"
+import BetterScrollTest from "../components/BetterScroll"
 
 export default [
     {
         //默认到首页的home tab项
         path:"/",
-        component:Home,
+        component:BetterScrollTest,
         children:[
             {
                 path:"/home",

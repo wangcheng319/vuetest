@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>使用better-scroll进行横向滚动,子元素自动撑开父元素宽度</title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .wrap {
+            width:500px;
+            overflow: hidden;
+            margin: 0 auto;
+            border: 1px black solid;
+        }
+        ul {
+            height: 100px;
+            background-color: lightseagreen;
+            /*由子元素自动撑开宽度*/
+            display: inline-block;
+            /*子元素不换行, 直到遇到<br/>*/
+            white-space: nowrap;
+            /*overflow-x: scroll;*/
+            /*overflow-y: hidden;*/
+        }
+        /*隐藏滚动条*/
+        ul::-webkit-scrollbar {display:none}
+        li {
+            display: inline-block;
+            width: 100px;
+            height: 80px;
+            margin-left: 10px;
+            background-color: lightcoral;
+        }
+    </style>
+</head>
+<body>
+<div class="wrap">
+    <ul>
+        <li>红</li>
+        <li>橙</li>
+        <li>黄</li>
+        <li>绿</li>
+        <li>青</li>
+        <li>蓝</li>
+        <li>紫</li>
+    </ul>
+</div>
+</body>
+<script type="text/javascript" src="https://unpkg.com/better-scroll/dist/bscroll.min.js"></script>
+<script type="text/javascript">
+    let scroll = new BScroll('.wrap', {
+        scrollX: true
+    })
+</script>
+</html>

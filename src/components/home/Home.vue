@@ -1,5 +1,6 @@
 <template>
     <div>
+        <div ref="d1" :style="{width:mWidth+'px'}" style="height: 50px;background-color: #42b983"></div>
         <div class="checkBox shadow" v-for="(item, index) in checks" :key="index" :class="{checked:item.important == 0 ? true : false}">
             <input type="checkbox" v-model="isChecked" :value="item" @change="bindCheckBox(item)" style="margin-left:38px">
             <img src="../../assets/头像@2x.png" style="width: 50px;height: 50px;margin-left: 38px"/>
@@ -16,7 +17,6 @@
                 <span class="radio"></span>
                 <span style="margin-left: 20px">次要</span>
             </label>
-
         </div>
 
         <TabBar />
@@ -32,6 +32,7 @@
         },
         data(){
             return{
+                mWidth:0,
                 imgurl:"",
                 isChecked: [],
                 checks: [
@@ -85,6 +86,13 @@
 
             bindRadio(){
                 window.console.log(JSON.stringify(this.isChecked))
+                this.addWidth()
+            },
+
+            addWidth(){
+                window.console.log('+++')
+                this.mWidth = this.mWidth+50;
+                window.console.log(this.mWidth)
             },
 
             imgurl1() {

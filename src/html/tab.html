@@ -4,11 +4,14 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <style>
-
+        body{
+            text-align: center;
+        }
         *{margin: 0;padding: 0;}
         .wrap{
+            width: 50%;
             display: flex;
-            margin: 50px;
+           justify-content: space-between;
         }
 
         /*加号表示选择下一个兄弟元素*/
@@ -29,6 +32,12 @@
         }
         .radio-item input[type='radio']{
             display: none;
+        }
+        .test{
+            width: 100px;
+            height: 100px;
+            background: lightblue;
+            padding: 10px  5px;
         }
     </style>
 
@@ -54,5 +63,7 @@
             </label>
         </p>
     </div>
+
+    <div class="test"></div>
 </body>
 </html>

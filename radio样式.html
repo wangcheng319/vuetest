@@ -4,7 +4,15 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <script>
+        window.onload = function () {
+            document.getElementById('passwd').addEventListener('focus',function () {
+                console.log('focus')
+            })
 
+            document.getElementById('passwd').addEventListener('blur',function () {
+                console.log('blur')
+            })
+        }
     </script>
 
     <style>
@@ -114,11 +122,15 @@
 
     <button class="btn">btn</button>
 
+    <!--input 失去焦点和获取焦点监听-->
+    <input placeholder="请输入密码" id="passwd">
 
-    <div style="display: flex;justify-content: center;align-items: center">
-        <span>婚期：2019-07-04</span>
-        <img src="src/assets/修改.png" style="margin-left: 10px">
+    <div style="display: flex;align-items: center;border: 1px lightblue solid;margin-top: 300px ;background: #42b983;height: 100px">
+        <img src="src/assets/faxian_.png" style="width: 16px">
+        <input placeholder="请输入文字">
     </div>
+
+
 
 </body>
 </html>
